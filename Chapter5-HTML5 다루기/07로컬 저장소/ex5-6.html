@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>로컬 저장소 예제</title>
+</head>
+<body>
+    <div id="result">re</div>
+    <script>
+        if(typeof(Storage) !== "undefined") {
+            localStorage.setItem("name", "은정");
+            document.getElementById("result").innerHTML = localStorage.getItem("name");
+        } else {
+            document.getElementById("result").innerHTML = "해당 브라우저는 웹스토리지를 지원하지 않습니다."
+        }
+    </script>
+</body>
+</html>

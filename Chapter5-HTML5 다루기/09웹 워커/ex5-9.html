@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>웹 워커 적용 예제</title>
+</head>
+<body>
+    <p>숫자증가: <output id="result"></output></p>
+    <button onclick="startWorker()">웹 워커 시작</button>
+    <button onclick="stopWorker()">웹 워커 종료</button>
+
+    <script>
+        var w;
+        function startWorker() {
+            if(typeof(Worker) !== "undefined") {
+                if(typeof(w) == "undefined") {
+                    w = new Worker("ex5-9.js");
+                }
+                w.onmessage = function(event) {
+                    document.getElementById("result").innerHTML = event.data;
+                };
+            } else {
+                document.getElementById("result").innerHTML = "웹 워커를 지원하지 않는 브라우저입니다.";
+            }
+        }
+
+        function stopWorker() {
+            w.terminate();
+            w = undefined;
+        }
+    </script>
+</body>
+</html>

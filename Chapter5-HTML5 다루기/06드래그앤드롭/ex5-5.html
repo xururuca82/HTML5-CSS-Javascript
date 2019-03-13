@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>드래그앤 드롭 예제</title>
+    <style>
+        #div1 {
+            width: 350px;
+            height: 70px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
+    <script>
+        function dragover(event) {
+            event.preventDefault();
+        }
+
+        function dragstart(event) {
+            event.dataTransfer.setData("dragElementId", event.target.id);
+        }
+
+        function drop(event) {
+            var data = event.dataTransfer.getData("dragElementId");
+            event.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</head>
+<body>
+    <p>봄 이지를 네모박스 안에 끌어다 놓으시오.</p>
+    
+    <div id="div1" ondrop="drop(event)" ondragover="dragover(event)"></div>
+    <br>
+    <img width="150" height="50" src="spring.jpg" alt="" id="drag1" draggable="true" ondragstart="dragstart(event)">
+</body>
+</html>
