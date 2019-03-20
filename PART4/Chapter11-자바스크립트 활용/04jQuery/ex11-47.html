@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>on() 메서드</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").on("click", function(){
+                $(this).hide();
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>누르면 사라져요!</button>
+    <button>이것도 역시 누르면 사라집니다!</button>
+    <button>몇개든 한번에 적용이 가능해요!</button>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ready()메서드</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            alert('화면이 모두 로드되어 사용 가능한 상태가 되었습니다.');
+            $('#show_alert').click(function(){
+                alert('버튼이 클릭되었네요!');
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="show_alert">click</button>
+</body>
+</html>

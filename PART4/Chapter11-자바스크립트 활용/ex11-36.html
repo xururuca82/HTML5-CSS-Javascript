@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>chapter11 자바스크립트 실습</title>
-    <script src="ex11-35.js"></script>
+    <title>버튼 이벤트 예제</title>
 </head>
 <body>
-    
+    <script>
+        function evt() {
+            alert("이벤트의 종료: " + window.event.type);
+        }    
+    </script>
+    <button onclick="evt();">버튼</button>
 </body>
 </html>

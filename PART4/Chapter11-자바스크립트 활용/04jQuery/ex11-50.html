@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>animate() 메서드</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#animate").click(function(){
+                $("#target").animate({
+                    left: '250px',
+                    opacity: '0.5',
+                    height: '150px',
+                    width: '150px'
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="animate">Start Animation</button>
+    <div id="target" style="background: yellowgreen; height: 50px; width: 50px; position: absolute; "></div>
+</body>
+</html>

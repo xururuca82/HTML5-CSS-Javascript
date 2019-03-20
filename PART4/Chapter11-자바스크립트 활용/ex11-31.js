@@ -1,0 +1,1 @@
+console.log( confirm('회원가입을 하시겠습니까?'));
