@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>영화소개 데모</title>
+</head>
+<body>
+    <div class="header">
+        <ul>
+            <li><a href="#content" class="active">HTML5영화</a></li>
+            <li><a href="http://www.cine21.com/news/" >뉴스</a></li>
+            <li class="drodown">
+                <a href="#" class="dropbtn">영화정보</a>
+                <div class="dropdown-content">
+                    <a href="http://www.cine21.com/rank/boxoffice/domestic/" >박스오피스</a>
+                    <a href="http://www.cine21.com/news/list/?idx=3" >리뷰</a>
+                </div>                
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">이벤트&커뮤니티</a>
+                <div class="dropdown-content">
+                    <a href="http://www.cine21.com/event/list/">시사회&이벤트</a>
+                    <a href="http://www.cine21.com/community/recruit/">영화인 리쿠르트</a>
+                    <a href="http://www.cine21.com/event/quiz/">씨네퀴즈</a>
+                    <a href="http://www.cine21.com/community/ticket/" >시사회 표 나눔터</a>
+                    <a href="http://www.cine21.com/community/post/" >독자엽서</a>
+                    <a href="http://www.cine21.com/community/after/" >이벤트 후기</a>
+                </div>
+            </li>
+            <li><a href="starwars.html">스타워즈:깨어난 포스 특집</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn" style="width: 150px; " name="login">Login</a>
+                <div class="dropdown-content">
+                    <input type="text" id="username" placeholder="username">
+                    <input type="password" id="password" placeholder="password">
+                    <a href="#" id="logIn">Login</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="img-slider">
+            <ul class="slides">
+                <input type="radio" name="radio-btn" id="img-1" checked>
+                <li class="side-container">
+                    <div class="slide">
+                        <img src="movie_cut1.jpg" alt="">
+                    </div>
+                    <div class="nav">
+                        <label for="img-4" class="prev">&#x2039;</label>
+                        <label for="img-2" class="next">&#x203a;</label>
+                    </div>
+                </li>
+                <input type="radio" name="radio-btn" id="img-2">
+                <li class="side-container">
+                    <div class="slide">
+                        <img src="movie_cut2.jpg" alt="">
+                    </div>
+                    <div class="nav">
+                        <label for="img-1" class="prev">&#x2039;</label>
+                        <label for="img-3" class="next">&#x203a;</label>
+                    </div>
+                </li>
+                <input type="radio" name="radio-btn" id="img-3">
+                <li class="side-container">
+                    <div class="slide">
+                        <img src="movie_cut3.jpg" alt="">
+                    </div>
+                    <div class="nav">
+                        <label for="img-2" class="prev">&#x2039;</label>
+                        <label for="img-4" class="next">&#x203a;</label>
+                    </div>
+                </li>
+                <input type="radio" name="radio-btn" id="img-4">
+                <li class="side-container">
+                    <div class="slide">
+                        <img src="movie_cut4.JPG" alt="">
+                    </div>
+                    <div class="nav">
+                        <label for="img-3" class="prev">&#x2039;</label>
+                        <label for="img-1" class="next">&#x203a;</label>
+                    </div>
+                </li>
+                <li class="nav-dots">
+                    <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+                    <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+                    <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+                    <label for="img-4" class="nav-dot" id="img-dot-4"></label>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <h2>이벤트 목록</h2>
+            <div class="movie-event">
+                <a href="#">
+                    <img src="movie_event1.jpg" alt="">
+                </a>
+                <a href="#">
+                    <img src="movie_event2.jpg" alt="">
+                </a>
+                <a href="#">
+                    <img src="movie_event3.jpg" alt="">
+                </a>
+                <a href="#">
+                    <img src="movie_event4.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="movie-info">
+            <div class="area_tab_box" id="area_tab_box">
+                <ul class="tab">
+                    <li>
+                        <a id="boxoffice_tab_left" class="btn_off">박스오피스</a>
+                    </li>
+                    <li class="last">
+                        <a id="boxoffice_tab_right" class="btn">상영예정작</a>
+                    </li>
+                </ul>
+                <div id="left_movie_info" style="display: block;">
+                    <ul class="box_office_charts">
+                        <li>
+                            <strong class="tit">1. 돈</strong>
+                        </li>
+                        <li>
+                            <span class="tit">2. 캡틴 마블</span>
+                        </li>
+                        <li>
+                            <span class="tit">3. 악질경찰</span>
+                        </li>
+                        <li>
+                            <span class="tit">4. 이스케이프 룸</span>
+                        </li>
+                        <li>
+                            <span class="tit">5. 우상</span>                        
+                        </li>
+                    </ul>
+                </div>
+                <div id="right_movie_info" style="display: none;">
+                    <ul class="box_office_charts">
+                        <li>
+                            <span class="tit">강변호텔_홍상수 감독</span>
+                        </li>
+                        <li>
+                            <span class="tit">선희와 슬기_박영주 감독</span>
+                        </li>
+                        <li>
+                            <span class="tit">어스_조던 필 감독</span>
+                        </li>
+                        <li>
+                            <span class="tit">더 길티_구스타파 몰러 감독</span>
+                        </li>
+                        <li>
+                            <span class="tit">장난스런 키스_프랭키 챈 감독</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <h4>HTML5 Authors All Right Reserved</h4>
+        <p>43 Jibong-ro, Wonmi-gu, Bucheon-si, Gyeonggi-do, 420-743, Korea</p>
+    </div>
+</body>
+</html>
