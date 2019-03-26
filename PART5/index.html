@@ -5,13 +5,183 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>영화소개 데모</title>
+    <style>
+        /* header CSS */
+        .header ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            border: 1px solid lightgray;
+            background-color: #fff;
+        }
+
+        .header li {
+            float: left;
+        }
+
+        .header li a {
+            display: inline-block;
+            text-align: center;
+            padding: 14px 16px;
+            color: #242c42;
+            text-decoration: none;
+        }
+
+        .header li a.active {
+            color: white;
+            background-color: #86bc42;
+        }
+
+        .header li a:hover:not(.active) {
+            background-color: lightgray;
+        }
+
+        .header li:last-child {
+            float: right;
+        }
+
+        .header .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: auto;
+        }
+
+        .header .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            z-index: auto;
+        }
+
+        .header .dropdown-content input {
+            width: 100px;
+            color: black;
+            padding: 12px 30px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .header .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* content CSS */
+        .img-slider {
+            margin: 40px 0 40px 0;
+        }
+
+        .slides {
+            padding: 0;
+            width: 809px;
+            height: 420px;
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides input {
+            display: none;
+        }
+
+        .slide-container {
+            display: block;
+        }
+        
+        .slide {
+            top: 0;
+            opacity: 0;
+            width: 809px;
+            height: 420px;
+            display: block;
+            position: absolute;
+            transform: scale(0);
+            transition: all .7s ease-in-out;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .nav label {
+            width: 100px;
+            height: 100%;
+            display: none;
+            position: absolute;
+            opacity: 0;
+            z-index: 9;
+            cursor: pointer;
+            transition: opacity .2s;
+            color: #fff;
+            font-size: 150px;
+            text-align: center;
+            line-height: 380px;
+            background-color: rgba(255,255,255,.3);
+            text-shadow: 0px 0px 15px rgb(119, 119, 119);
+        }
+
+        .slide:hover + .nav label { opacity: 0.5; }
+
+        .nav label:hover { opacity: 1; }
+
+        .nav .next { right: 0; }
+
+        input:checked + .slide-container .slide {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 1s ease-in-out;
+        }
+
+        input:checked+.slide-container .nav label { display: block; }
+
+        .nav-dots {
+            width: 100%;
+            bottom: 9px;
+            height: 11px;
+            display: block;
+            position: absolute;
+            text-align: center;
+        }
+
+        .nav-dots .nav-dot {
+            top: -5px;
+            width: 11px;
+            height: 11px;
+            margin: 0 4px;
+            position: relative;
+            border-radius: 100%;
+            display: inline-block;
+            background-color: rgba(255,255,255,0.6);
+        }
+
+        .nav-dots .nav-dot:hover {
+            cursor: pointer;
+            background-color: rgab(0,0,0,0.8);
+        }
+
+        input#img-1:checked ~ .nav-dots label#img-dot-1,
+        input#img-2:checked ~ .nav-dots label#img-dot-2,
+        input#img-3:checked ~ .nav-dots label#img-dot-3,
+        input#img-4:checked ~ .nav-dots label#img-dot-4 {
+            background: rgba(0,0,0,0.8);
+        }
+        
+    </style>
 </head>
 <body>
     <div class="header">
         <ul>
             <li><a href="#content" class="active">HTML5영화</a></li>
             <li><a href="http://www.cine21.com/news/" >뉴스</a></li>
-            <li class="drodown">
+            <li class="dropdown">
                 <a href="#" class="dropbtn">영화정보</a>
                 <div class="dropdown-content">
                     <a href="http://www.cine21.com/rank/boxoffice/domestic/" >박스오피스</a>
@@ -44,7 +214,7 @@
         <div class="img-slider">
             <ul class="slides">
                 <input type="radio" name="radio-btn" id="img-1" checked>
-                <li class="side-container">
+                <li class="slide-container">
                     <div class="slide">
                         <img src="movie_cut1.jpg" alt="">
                     </div>
@@ -54,7 +224,7 @@
                     </div>
                 </li>
                 <input type="radio" name="radio-btn" id="img-2">
-                <li class="side-container">
+                <li class="slide-container">
                     <div class="slide">
                         <img src="movie_cut2.jpg" alt="">
                     </div>
@@ -64,7 +234,7 @@
                     </div>
                 </li>
                 <input type="radio" name="radio-btn" id="img-3">
-                <li class="side-container">
+                <li class="slide-container">
                     <div class="slide">
                         <img src="movie_cut3.jpg" alt="">
                     </div>
@@ -74,7 +244,7 @@
                     </div>
                 </li>
                 <input type="radio" name="radio-btn" id="img-4">
-                <li class="side-container">
+                <li class="slide-container">
                     <div class="slide">
                         <img src="movie_cut4.JPG" alt="">
                     </div>
