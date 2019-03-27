@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>스타워즈: 깨어난포스</title>
+    <style>
+        /* header CSS */
+        .header ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            border: 1px solid lightgray;
+            background-color: #fff;
+        }
+
+        .header li {
+            float: left;
+        }
+
+        .header li a {
+            display: inline-block;
+            text-align: center;
+            padding: 14px 16px;
+            color: #242c42;
+            text-decoration: none;
+        }
+
+        .header li a.active {
+            color: white;
+            background-color: #86bc42;
+        }
+
+        .header li a:hover:not(.active) {
+            background-color: lightgray;
+        }
+
+        .header li:last-child {
+            float: right;
+        }
+
+        .header .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: auto;
+        }
+
+        .header .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            z-index: auto;
+        }
+
+        .header .dropdown-content input {
+            width: 100px;
+            color: black;
+            padding: 12px 30px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .header .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <ul>
+            <li><a href="#content" class="active">HTML5영화</a></li>
+            <li><a href="http://www.cine21.com/news/" >뉴스</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">영화정보</a>
+                <div class="dropdown-content">
+                    <a href="http://www.cine21.com/rank/boxoffice/domestic/" >박스오피스</a>
+                    <a href="http://www.cine21.com/news/list/?idx=3" >리뷰</a>
+                </div>                
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">이벤트&커뮤니티</a>
+                <div class="dropdown-content">
+                    <a href="http://www.cine21.com/event/list/">시사회&이벤트</a>
+                    <a href="http://www.cine21.com/community/recruit/">영화인 리쿠르트</a>
+                    <a href="http://www.cine21.com/event/quiz/">씨네퀴즈</a>
+                    <a href="http://www.cine21.com/community/ticket/" >시사회 표 나눔터</a>
+                    <a href="http://www.cine21.com/community/post/" >독자엽서</a>
+                    <a href="http://www.cine21.com/community/after/" >이벤트 후기</a>
+                </div>
+            </li>
+            <li><a href="starwars.html">스타워즈:깨어난 포스 특집</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn" style="width: 150px; " name="logIn">LogIn</a>
+                <div class="dropdown-content">
+                    <input type="text" id="username" placeholder="username">
+                    <input type="password" id="password" placeholder="password">
+                    <a href="#" id="logIn">LogIn</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <div id="section0">
+            <h1>스타워즈:깨어난 포스</h1>
+        </div>
+        <div id="section1">
+            <h2>개요</h2>
+            <img src="./img/starWars_TheForceAwakens.jpg" class="main-img" alt="">
+            <p>스타워즈 사가의 7번째 작품이며 10년 만의 스타워즈 영화 시리즈. 감독은 J.J. 에이브럼스. 디즈니 산하 첫 스타워즈 시리즈이다. </p>
+            <p>북미 개봉은 2015년 12월 18일에 했으며, 한국은 그보다 하루 빠른 12월 17일에 개봉했다. 시차를 생각해보면 거의 이틀 일찍 개봉하는 셈. 이전 스타워즈 6부작 모두 미국에서는 한국보다 일찍 개봉하였으나, 이번 작은 한국에서 하루 일찍 개봉하게 되었다. 다른 나라도 대부분 17, 18일 즈음에 개봉했다. 이후 개봉한 로그 원이 한국에서 미국보다 늦게 개봉하게 됨으로 깨어난 포스는 스타워즈 시리즈 사상 한국이 미국보다 먼저 개봉하게 된 최초이자 마지막이자 유일한 사례로 남게 될 뻔했으나 라스트 제다이가 한국에서 미국보다 하루 더 빨리 개봉함으로 더 이상 유일한 사례가 아니게 되었다. </p>
+            <p>예고편이나 포스터에서 확인할 수 있듯 타이틀에 '에피소드 7'을 생략하고 '스타워즈: 깨어난 포스'로 홍보되고 있다. 스타워즈를 접하지 못한 사람들을 위해 '에피소드 7'이라는 넘버링이 주는 부담을 없애고자 하는 홍보 전략으로 보인다. 다만 오프닝 롤에서만큼은 전통을 지키며 "EPISODE Ⅶ"가 등장한다.</p>
+            <p>한국에서는 12세 이상 관람가, 미국에서는 PG-13 등급을 받았다. 좀 잔인했던 시스의 복수가 PG-13 등급을 받은 것을 제외하고[6] 지금까지의 모든 스타워즈 영화들은 "PG"였다는 것을 생각하면 이례적인 일이다. 한국에서도 프리퀄 3부작 모두[7] 전체관람가였던 것에 비해 깨어난 포스는 12세 이상 관람가가 되었다. 1월 7일 더빙판 개봉이 시작되었다. 하지만 워낙 개봉관 수가 적어[8] 수도권 일부 지역에서만 겨우 볼 수 있을 정도였다. 더빙에 대한 평은 전체적으로 매우 좋은 편으로 자막 상영시 문제되었던 오역[9]들 일부를 수정했다. 더빙을 못 본 팬이라면 후에 더빙판 VOD가 나오거나 블루레이에 더빙판도 실어주길 기대하는 수밖에 없을 듯하다.</p>
+            <p>4월 5일에 BD/DVD가 북미에 출시된다. 국내에는 4월 29일에 발매되는데 더빙판도 수록하였다.</p>
+        </div>
+        <div id="section2">
+            <h2>줄거리</h2>
+            <p>다스 베이더가 사망한 다음 약 30년 후, 마지막 남은 제다이인 루크 스카이워커가 사라졌다. 몰락한 은하 제국으로부터 일어난 퍼스트 오더는 루크와 공화국을 찾아내 제거하려 한다. 공화국과 루크의 쌍둥이 여동생 레이아 오르가나가 이끄는 저항군은 퍼스트 오더를 저지하고 루크의 도움을 받기 위해 루크를 찾는다.</p>
+            <p>저항군 파일럿 포 다메론은 자쿠 행성의 마을 장로 로 산 테카를 만나 루크가 있는 장소의 지도를 얻는다. 카일로 렌이 이끄는 스톰트루퍼들은 마을을 파괴하고 포를 붙잡는다. 포의 드로이드 BB-8는 지도를 갖고 탈출하고 부랑자 레이를 만나게 된다. 렌은 포를 고문하여 BB-8에 대하여 알게 된다. 퍼스트 오더가 하는 짓이 옳지 않은 행동이라고 생각해온 스톰트루퍼 FN-2187은 포를 풀어주고 타이 파이터를 훔쳐 함께 탈출하고 포는 FN-2187에게 '핀'이라는 별명을 지어준다. 하지만, 퍼스트 오더가 그들의 타이 파이터를 공격하고, 둘은 자쿠에 추락하고 핀만이 살아남는다.[2] 핀은 레이와 BB-8을 만나지만 퍼스트 오더가 그들을 추적하고 공습을 시작한다. 이들 3명은 낡은 우주선인 밀레니엄 팰콘을 훔쳐 행성을 탈출한다.그러나, 한 솔로가 그들이 탄 우주선을 찾고, 마침내 퍼스트 오더는 스타킬러 기지의 막강한 파괴력으로 공화국 행성을 박살낸다. 그 후 그 들은 저항군 기지로 가 레아 공주를 만나고 죽은줄 알았던 포도 만난다. 그리고 스타킬러 파괴 계획을 세우고 저항군은 방어막이 해제되자 X-윙 편대로 대규모 공격을 감행한다. 한편, 스타킬러 기지 내의 원자로에 폭탄을 설치하던 한 솔로 일행은 갑자기 카일로 렌, 즉 벤 솔로를 만난다. 한 솔로는 이미 반쯤 다크 사이드 포스로 빠져든 벤을 구하려 하지만 오히려 아이러니하게 그의 아들의 손으로 라이트세이버에 관통당해 죽는다.</p>
+        </div>
+        <div id="section3">
+            <h2>예고편</h2>            
+            <iframe width="70%" height="550" src="https://www.youtube.com/embed/G7VijpXyAXI" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+    </div>
+    <script src="./jquery/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            user = {
+                username: undefined,
+                password: undefined
+            };
+
+            $('#logIn').click(function(){
+                if(!$('#username').val()) {
+                    alert('사용자 이름을 입력해주세요.');
+                    return;
+                }                
+
+                if(!$('#password').val()) {
+                    alert('비밀번호를 입력해주세요.');
+                    return;
+                }
+
+                if(!user.username) {
+                    //현재 상태가 로그아웃
+                    user.username = $('#username').val();
+                    user.password = $('#password').val();
+                    $('#username').hide();
+                    $('#password').hide();
+                    $('#logIn').text('LogOut');
+                    $('[name=logIn]').text('LogOut');
+                } else {
+                    // 현재 상태가 로그인
+                    user.username = undefined;
+                    user.password = undefined;
+                    $('#username').val('');
+                    $('#password').val('');
+                    $('#username').show();
+                    $('#password').show();
+                    $('#logIn').text('LogIn');
+                    $('[name=logIn]').text('LogIn');
+                    alert('로그아웃 하셨습니다.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

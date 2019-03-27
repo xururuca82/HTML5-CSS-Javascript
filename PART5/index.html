@@ -301,11 +301,11 @@
             </li>
             <li><a href="starwars.html">스타워즈:깨어난 포스 특집</a></li>
             <li class="dropdown">
-                <a href="#" class="dropbtn" style="width: 150px; " name="login">Login</a>
+                <a href="#" class="dropbtn" style="width: 150px; " name="logIn">LogIn</a>
                 <div class="dropdown-content">
                     <input type="text" id="username" placeholder="username">
                     <input type="password" id="password" placeholder="password">
-                    <a href="#" id="logIn">Login</a>
+                    <a href="#" id="logIn">LogIn</a>
                 </div>
             </li>
         </ul>
@@ -316,7 +316,7 @@
                 <input type="radio" name="radio-btn" id="img-1" checked>
                 <li class="slide-container">
                     <div class="slide">
-                        <img src="movie_cut1.jpg" alt="">
+                        <img src="./img/movie_cut1.jpg" alt="">
                     </div>
                     <div class="nav">
                         <label for="img-4" class="prev">&#x2039;</label>
@@ -326,7 +326,7 @@
                 <input type="radio" name="radio-btn" id="img-2">
                 <li class="slide-container">
                     <div class="slide">
-                        <img src="movie_cut2.jpg" alt="">
+                        <img src="./img/movie_cut2.jpg" alt="">
                     </div>
                     <div class="nav">
                         <label for="img-1" class="prev">&#x2039;</label>
@@ -336,7 +336,7 @@
                 <input type="radio" name="radio-btn" id="img-3">
                 <li class="slide-container">
                     <div class="slide">
-                        <img src="movie_cut3.jpg" alt="">
+                        <img src="./img/movie_cut3.jpg" alt="">
                     </div>
                     <div class="nav">
                         <label for="img-2" class="prev">&#x2039;</label>
@@ -346,7 +346,7 @@
                 <input type="radio" name="radio-btn" id="img-4">
                 <li class="slide-container">
                     <div class="slide">
-                        <img src="movie_cut4.JPG" alt="">
+                        <img src="./img/movie_cut4.JPG" alt="">
                     </div>
                     <div class="nav">
                         <label for="img-3" class="prev">&#x2039;</label>
@@ -365,16 +365,16 @@
             <h2>이벤트 목록</h2>
             <div class="movie-event">
                 <a href="#">
-                    <img src="movie_event1.jpg" alt="">
+                    <img src="./img/movie_event1.jpg" alt="">
                 </a>
                 <a href="#">
-                    <img src="movie_event2.jpg" alt="">
+                    <img src="./img/movie_event2.jpg" alt="">
                 </a>
                 <a href="#">
-                    <img src="movie_event3.jpg" alt="">
+                    <img src="./img/movie_event3.jpg" alt="">
                 </a>
                 <a href="#">
-                    <img src="movie_event4.jpg" alt="">
+                    <img src="./img/movie_event4.jpg" alt="">
                 </a>
             </div>
         
@@ -434,5 +434,61 @@
         <h4>HTML5 Authors All Right Reserved</h4>
         <p>43 Jibong-ro, Wonmi-gu, Bucheon-si, Gyeonggi-do, 420-743, Korea</p>
     </div>
+    <script src="./jquery/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            user = {
+                username: undefined,
+                password: undefined
+            };
+
+            $('#logIn').click(function(){
+                if(!$('#username').val()) {
+                    alert('사용자 이름을 입력해주세요.');
+                    return;
+                }                
+
+                if(!$('#password').val()) {
+                    alert('비밀번호를 입력해주세요.');
+                    return;
+                }
+
+                if(!user.username) {
+                    //현재 상태가 로그아웃
+                    user.username = $('#username').val();
+                    user.password = $('#password').val();
+                    $('#username').hide();
+                    $('#password').hide();
+                    $('#logIn').text('LogOut');
+                    $('[name=logIn]').text('LogOut');
+                } else {
+                    // 현재 상태가 로그인
+                    user.username = undefined;
+                    user.password = undefined;
+                    $('#username').val('');
+                    $('#password').val('');
+                    $('#username').show();
+                    $('#password').show();
+                    $('#logIn').text('LogIn');
+                    $('[name=logIn]').text('LogIn');
+                    alert('로그아웃 하셨습니다.');
+                }
+            });
+
+            $('a#boxoffice_tab_left').click(function(){
+                $('a#boxoffice_tab_left').attr("class", "btn");
+                $('a#boxoffice_tab_right').attr("class", "btn_off");
+                $('#left_movie_info').attr("style", "display: block;");
+                $('#right_movie_info').attr("style", "display: none;");
+            });
+
+            $('a#boxoffice_tab_right').click(function(){
+                $('a#boxoffice_tab_left').attr("class", "btn_off");
+                $('a#boxoffice_tab_right').attr("class", "btn");
+                $('#left_movie_info').attr("style", "display: none;");
+                $('#right_movie_info').attr("style", "display: block;");
+            });
+        });
+    </script>
 </body>
 </html>
