@@ -72,7 +72,7 @@
             display: block;
         }
 
-        /* content CSS */
+        /* content image slider CSS */
         .img-slider {
             margin: 40px 0 40px 0;
         }
@@ -173,7 +173,107 @@
         input#img-4:checked ~ .nav-dots label#img-dot-4 {
             background: rgba(0,0,0,0.8);
         }
+
+        /* contnet event boxoffice CSS */
+        div .row {
+            width: 100%;
+        }
+
+        .row h2 {
+            float: left;
+            width: 50%;
+            margin-left: 20%;
+        }
+
+        .row .movie-event {
+            float: left;
+            width: 50%;
+            margin-left: 20%;
+        }
         
+        .row .movie-info {
+            float: left;
+            margin-right: 14%;
+            width: 16%;
+        }
+
+        ul.tab {
+            border: 0px;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            background-color: #fff;
+        }
+
+        ul.tab li {
+            float: left;
+            margin-left: 4px;
+        }
+
+        .box_office_charts {
+            margin: 30px 0 30px 0;
+            padding: 0;
+            border: 0;
+            line-height: 130%;
+            overflow: hidden;
+        }
+
+        .box_office_charts li {
+            position: relative;
+            /* float: left; */
+            color: #666;
+        }
+
+        .box_office_charts li .tit {
+            display: inline-block;
+            width: 100%;
+            height: 24px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-bottom: 0;
+            font-weight: bold;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid lightgray;
+            white-space: nowrap;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857;
+            border-radius: 4px;
+        }
+
+        .btn_off {
+            display: inline-block;
+            margin-bottom: 0;
+            background-color: lightgray;
+            font-weight: bold;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid lightgray;
+            white-space: nowrap;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857;
+            border-radius: 4px;
+        }
+
+        /* footer CSS */
+        .footer {
+            clear: both;
+            padding: 5px;
+            text-align: center;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -277,54 +377,55 @@
                     <img src="movie_event4.jpg" alt="">
                 </a>
             </div>
-        </div>
-        <div class="movie-info">
-            <div class="area_tab_box" id="area_tab_box">
-                <ul class="tab">
-                    <li>
-                        <a id="boxoffice_tab_left" class="btn_off">박스오피스</a>
-                    </li>
-                    <li class="last">
-                        <a id="boxoffice_tab_right" class="btn">상영예정작</a>
-                    </li>
-                </ul>
-                <div id="left_movie_info" style="display: block;">
-                    <ul class="box_office_charts">
+        
+            <div class="movie-info">
+                <div class="area_tab_box" id="area_tab_box">
+                    <ul class="tab">
                         <li>
-                            <strong class="tit">1. 돈</strong>
+                            <a id="boxoffice_tab_left" class="btn_off">박스오피스</a>
                         </li>
-                        <li>
-                            <span class="tit">2. 캡틴 마블</span>
-                        </li>
-                        <li>
-                            <span class="tit">3. 악질경찰</span>
-                        </li>
-                        <li>
-                            <span class="tit">4. 이스케이프 룸</span>
-                        </li>
-                        <li>
-                            <span class="tit">5. 우상</span>                        
+                        <li class="last">
+                            <a id="boxoffice_tab_right" class="btn">상영예정작</a>
                         </li>
                     </ul>
-                </div>
-                <div id="right_movie_info" style="display: none;">
-                    <ul class="box_office_charts">
-                        <li>
-                            <span class="tit">강변호텔_홍상수 감독</span>
-                        </li>
-                        <li>
-                            <span class="tit">선희와 슬기_박영주 감독</span>
-                        </li>
-                        <li>
-                            <span class="tit">어스_조던 필 감독</span>
-                        </li>
-                        <li>
-                            <span class="tit">더 길티_구스타파 몰러 감독</span>
-                        </li>
-                        <li>
-                            <span class="tit">장난스런 키스_프랭키 챈 감독</span>
-                        </li>
-                    </ul>
+                    <div id="left_movie_info" style="display: block;">
+                        <ul class="box_office_charts">
+                            <li>
+                                <strong class="tit">1. 돈</strong>
+                            </li>
+                            <li>
+                                <span class="tit">2. 캡틴 마블</span>
+                            </li>
+                            <li>
+                                <span class="tit">3. 악질경찰</span>
+                            </li>
+                            <li>
+                                <span class="tit">4. 이스케이프 룸</span>
+                            </li>
+                            <li>
+                                <span class="tit">5. 우상</span>                        
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="right_movie_info" style="display: none;">
+                        <ul class="box_office_charts">
+                            <li>
+                                <span class="tit">강변호텔_홍상수 감독</span>
+                            </li>
+                            <li>
+                                <span class="tit">선희와 슬기_박영주 감독</span>
+                            </li>
+                            <li>
+                                <span class="tit">어스_조던 필 감독</span>
+                            </li>
+                            <li>
+                                <span class="tit">더 길티_구스타파 몰러 감독</span>
+                            </li>
+                            <li>
+                                <span class="tit">장난스런 키스_프랭키 챈 감독</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
